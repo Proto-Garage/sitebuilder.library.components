@@ -18,7 +18,7 @@
     "url": "https://github.com/Proto-Garage/sitebuilder.library.components/issues"
   },
   "homepage": "https://github.com/Proto-Garage/sitebuilder.library.components#readme",
-  "peerDependencies": {
+  "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-render-html": "^0.6.0"

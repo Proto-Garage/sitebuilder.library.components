@@ -3,6 +3,7 @@
     "outDir": "./lib",
     "target": "es6",
     "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": false,
     "strictNullChecks": true,
     "declaration": true,
