@@ -1,5 +1,5 @@
 import * as React from "react";
-import renderHTML from "react-render-html";
+import * as renderHTML from "react-render-html";
 
 interface IProps {
   tag?: string;
