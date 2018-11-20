@@ -10,3 +10,4 @@ junit.xml
 
 # Misc
 yarn-error.log
+yarn.lock
