@@ -1,57 +1,72 @@
 import * as React from "react";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
-import Section from "./Section";
+import styled from "styled-components";
+// import Row from "reactstrap/lib/Row";
+// import Col from "reactstrap/lib/Col";
+import { Node as NodeType } from "sitebuilder.client";
+import Heading from "./templates/Heading";
+import Paragraph from "./templates/Paragraph";
+import Section from "./templates/Section";
 import Node from "./Node";
-import Image from "./Image";
-import Row from "reactstrap/lib/Row";
-import Col from "reactstrap/lib/Col";
+import Image from "./templates/Image";
+import Carousel from "./templates/Carousel";
+import ColumnControls from "./ColumnControls";
+import SectionControls from "./SectionControls";
 
 interface IProps {
   current: number;
-  nodes: any;
-  node: any;
+  dragControl?: any;
+  node: NodeType;
 }
 
 const RenderNode: React.SFC<IProps> = props => {
-  const { current, node, nodes } = props;
+  const { current, dragControl, node } = props;
   switch (node.type) {
     case "Root":
       return (
         <>
           <Section className="root123" node={node}>
-            <Node nodes={nodes} node={node} current={0} />
+            <Node node={node} current={0} />
           </Section>
         </>
       );
     case "Section":
-      // console.log(current, node);
       return (
         <Section node={node}>
-          <Node nodes={nodes} node={node} current={0} />
+          <ControlWrapper>
+            <Node node={node} current={0} />
+            <SectionControls />
+          </ControlWrapper>
         </Section>
       );
     case "Row":
-      return (
-        <Row>
-          <Node nodes={nodes} node={node} current={0} />
-        </Row>
-      );
+      return <Node node={node} current={0} />;
     case "Column":
       return (
-        <Col>
-          <Node nodes={nodes} node={node} current={current + 1} />
-        </Col>
+        <ControlWrapper>
+          <Node node={node} current={current + 1} />
+          <ColumnControls dragControl={dragControl} />
+        </ControlWrapper>
       );
     case "Heading":
-      return <Heading tag={node.tag} value={node.value} />;
+      return <Heading value={node.attributes.text} />;
     case "Paragraph":
-      return <Paragraph value={node.value} />;
+      return <Paragraph value={node.attributes.text} />;
     case "Image":
       return <Image node={node} />;
+    case "Carousel":
+      return <Carousel node={node} />;
     default:
-      return <div>asdasd</div>;
+      return null;
   }
 };
 
 export default RenderNode;
+
+const ControlWrapper = styled.div`
+  position: relative;
+  &:hover {
+    .section-controls {
+      opacity: 1;
+    }
+  }
+`;

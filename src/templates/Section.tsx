@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import parseStyles from "./utils/parseStyles";
+import parseStyles from "../../../../utils/parseStyles";
 
 interface IProps {
   className?: string;
@@ -22,6 +22,7 @@ export default Section;
 
 const Wrapper = styled.section<{ styles: any }>`
   ${props => props.styles}
+  position: relative;
   .background {
     position: absolute;
   }
