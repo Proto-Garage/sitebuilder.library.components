@@ -14,7 +14,6 @@ export default class Node extends React.Component<IProps, any> {
     if (!node) return;
     const children = node.children;
     let newChildren: string[] = [];
-    // console.log(node, children);
     if (node.type === "Page") {
       children.filter((child: NodeType) => {
         if (child.type === "Header") return;
