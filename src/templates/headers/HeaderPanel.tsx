@@ -3,7 +3,7 @@ import Header1 from "./Header1";
 import Header2 from "./Header2";
 import Header3 from "./Header3";
 import Header4 from "./Header4";
-import parseStyles from "../../../../../utils/parseStyles";
+import { parseStyles } from "../../utils";
 import { HeaderNode, Styles } from "sitebuilder.client";
 
 interface IProps {

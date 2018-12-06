@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Node } from "sitebuilder.client";
+import { CarouselNode, Node } from "sitebuilder.client";
 import OwlCarousel from "react-owl-carousel2";
 
 interface IProps {
-  node?: Node;
+  node: CarouselNode;
   boxed: false;
 }
 

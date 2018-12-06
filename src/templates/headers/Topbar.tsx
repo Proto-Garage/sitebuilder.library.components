@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const Topbar: React.SFC<IProps> = props => {
-  const Boxed = props.boxed ? Container : React.Fragment;
+  const Boxed: any = props.boxed ? Container : React.Fragment;
   return (
     <Wrapper
       className="d-none d-md-block"

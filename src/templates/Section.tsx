@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import parseStyles from "../../../../utils/parseStyles";
+import { parseStyles } from "../utils";
 
 interface IProps {
   className?: string;

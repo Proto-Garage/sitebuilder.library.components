@@ -5,7 +5,7 @@ import Footer3 from "./Footer3";
 import Footer4 from "./Footer4";
 import Footer5 from "./Footer5";
 import { FooterNode, Styles } from "sitebuilder.client";
-import parseStyles from "../../../../../utils/parseStyles";
+import { parseStyles } from "../../utils";
 
 interface IProps {
   footer: FooterNode | null;

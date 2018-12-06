@@ -1,13 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-// import Row from "reactstrap/lib/Row";
-// import Col from "reactstrap/lib/Col";
-import { Node as NodeType } from "sitebuilder.client";
-import Heading from "./templates/Heading";
-import Paragraph from "./templates/Paragraph";
+import { Node as NodeType, CarouselNode } from "sitebuilder.client";
 import Section from "./templates/Section";
 import Node from "./Node";
-import Image from "./templates/Image";
 import Carousel from "./templates/Carousel";
 import ColumnControls from "./ColumnControls";
 import SectionControls from "./SectionControls";
@@ -24,7 +19,7 @@ const RenderNode: React.SFC<IProps> = props => {
     case "Root":
       return (
         <>
-          <Section className="root123" node={node}>
+          <Section node={node}>
             <Node node={node} current={0} />
           </Section>
         </>
@@ -47,14 +42,8 @@ const RenderNode: React.SFC<IProps> = props => {
           <ColumnControls dragControl={dragControl} />
         </ControlWrapper>
       );
-    case "Heading":
-      return <Heading value={node.attributes.text} />;
-    case "Paragraph":
-      return <Paragraph value={node.attributes.text} />;
-    case "Image":
-      return <Image node={node} />;
     case "Carousel":
-      return <Carousel node={node} />;
+      return <Carousel node={node as CarouselNode} />;
     default:
       return null;
   }

@@ -1,7 +1,7 @@
 import * as React from "react";
-import Image1 from "../../../../../assets/images/translate1.png";
-import Image2 from "../../../../../assets/images/translate2.png";
-import Image3 from "../../../../../assets/images/translate3.png";
+import Image1 from "./assets/translate1.png";
+import Image2 from "./assets/translate2.png";
+import Image3 from "./assets/translate3.png";
 
 interface IProps {}
 

@@ -35,11 +35,14 @@ export default class NavigationBar extends React.Component<IProps> {
     });
   };
   render() {
-    const Boxed = this.props.boxed ? Container : "div";
+    const Boxed: any = this.props.boxed ? Container : "div";
     return (
       <Wrapper
         style={this.props.styles ? this.props.styles : {}}
         linkColor={this.props.styles ? this.props.styles.color : null}
+        backgroundColor={
+          this.props.styles ? this.props.styles.backgroundColor : null
+        }
         className="d-flex align-items-center"
       >
         <Boxed>
@@ -183,9 +186,24 @@ export default class NavigationBar extends React.Component<IProps> {
   }
 }
 
-const Wrapper = styled.div<{ linkColor: string | null | undefined }>`
+const Wrapper = styled.div<{
+  linkColor: string | null | undefined;
+  backgroundColor: string | null | undefined;
+}>`
   a {
     color: ${props =>
       props.linkColor ? props.linkColor : "inherit"} !important;
+  }
+  .navbar-nav .dropdown-menu {
+    background-color: ${props =>
+      props.backgroundColor ? props.backgroundColor : "inherit"} !important;
+  }
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    color: ${props =>
+      props.linkColor ? props.linkColor : "inherit"} !important;
+    opacity: 0.75;
+    background-color: ${props =>
+      props.backgroundColor ? props.backgroundColor : "inherit"} !important;
   }
 `;

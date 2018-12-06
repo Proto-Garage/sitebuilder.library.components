@@ -8,20 +8,9 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react",
-    "typeRoots": [
-      "node_modules/@types",
-      "types"
-    ],
-    "lib": [
-      "dom",
-      "esnext",
-    ]
+    "typeRoots": ["node_modules/@types", "typings"],
+    "lib": ["dom", "esnext"]
   },
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "typings/index.d.ts"],
+  "exclude": ["node_modules"]
 }

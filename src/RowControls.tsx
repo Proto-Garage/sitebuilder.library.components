@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-import { AnchorButton } from "@blueprintjs/core";
+import { FiSettings, FiMove, FiTrash } from "react-icons/fi";
+import { Button } from "reactstrap";
 
 interface IProps {}
 
@@ -8,14 +9,20 @@ const RowControls: React.SFC<IProps> = props => {
   return (
     <Controls>
       <ul className="list-unstyled">
-        <li>
-          <AnchorButton icon="move" />
+        <li className="list-inline-item">
+          <Button color="primary">
+            <FiMove />
+          </Button>
         </li>
-        <li>
-          <AnchorButton icon="cog" />
+        <li className="list-inline-item">
+          <Button color="primary">
+            <FiSettings />
+          </Button>
         </li>
-        <li>
-          <AnchorButton icon="trash" />
+        <li className="list-inline-item">
+          <Button color="primary">
+            <FiTrash />
+          </Button>
         </li>
       </ul>
     </Controls>

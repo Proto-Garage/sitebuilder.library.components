@@ -1,8 +1,10 @@
 import * as React from "react";
+import { Node as NodeType } from "sitebuilder.client";
 interface IProps {
-    nodes: any;
-    node: any;
+    node: NodeType;
     current: number;
 }
-declare const RecurseNode: React.SFC<IProps>;
+declare class RecurseNode extends React.Component<IProps> {
+    render(): JSX.Element;
+}
 export default RecurseNode;
