@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Config, Node as NodeType } from "sitebuilder.client";
+import { Node as NodeType } from "sitebuilder.client";
 import RenderNode from "./RenderNode";
 import RecurseNode from "./RecurseNode";
 
 export interface IProps {
-  config: Config | null;
   node: NodeType | null;
   current: number;
 }
