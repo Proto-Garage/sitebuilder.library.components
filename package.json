@@ -27,7 +27,7 @@
     "react-owl-carousel2": "^0.3.0",
     "react-render-html": "^0.6.0",
     "reactstrap": "^6.5.0",
-    "sitebuilder.client": "git://github.com/Proto-Garage/sitebuilder.client.git#v0.1.33",
+    "sitebuilder.client": "git://github.com/Proto-Garage/sitebuilder.client.git#v0.1.34",
     "styled-components": "^4.1.1"
   },
   "devDependencies": {
