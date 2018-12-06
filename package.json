@@ -1,12 +1,12 @@
 {
   "name": "sitebuilder.library.components",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "rimraf ./lib && tsc",
-    "install": "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
