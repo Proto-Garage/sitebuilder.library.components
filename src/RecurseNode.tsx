@@ -71,35 +71,33 @@ const EditModeColumnWrapper: React.SFC<{
   );
 };
 
-class RecurseNode extends React.Component<IProps> {
+export default class RecurseNode extends React.Component<IProps> {
   render() {
     const { node, current } = this.props;
-    const { config } = this.context.state;
-    let newChildren: string[] = [];
-    node.children.filter((child: NodeType) => {
-      newChildren = [...newChildren, child.id];
-    });
     return (
       <>
-        {newChildren.map((value: string, index: number) => {
-          const node = config.findNode(value);
+        {node.children.map((node: NodeType, index: number) => {
           if (!node) return;
           if (node.type === "Section" && node.attributes.type === "row") {
             return (
-              <EditModeRowWrapper value={value} edit={config}>
+              <EditModeRowWrapper value={node.id} edit={window.__EDIT_MODE__}>
                 <RenderNode node={node} current={current} />
               </EditModeRowWrapper>
             );
           }
           if (node.type === "Section" && node.attributes.type === "column") {
             return (
-              <EditModeColumnWrapper value={value} index={index} edit={config}>
+              <EditModeColumnWrapper
+                value={node.id}
+                index={index}
+                edit={window.__EDIT_MODE__}
+              >
                 <RenderNode node={node} current={current} />
               </EditModeColumnWrapper>
             );
           }
           return (
-            <React.Fragment key={value}>
+            <React.Fragment key={node.id}>
               <RenderNode node={node} current={current} />
             </React.Fragment>
           );
@@ -108,8 +106,6 @@ class RecurseNode extends React.Component<IProps> {
     );
   }
 }
-
-export default RecurseNode;
 
 const ColumnContainer = styled.div<any>`
   position: relative;

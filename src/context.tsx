@@ -3,7 +3,6 @@ import { Config } from "sitebuilder.client";
 
 export interface ProviderState {
   config: Config | null;
-  path: string;
 }
 
 export interface UpdateStateArg {

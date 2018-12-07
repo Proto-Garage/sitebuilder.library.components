@@ -2,7 +2,7 @@
 node_modules
 
 # Build
-/lib
+lib
 *.tgz
 
 # Tests

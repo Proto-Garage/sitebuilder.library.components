@@ -12,19 +12,14 @@ export default class Node extends React.Component<IProps, any> {
   public render() {
     const { node, current } = this.props;
     if (!node) return;
-    const children = node.children;
-    let newChildren: string[] = [];
-    if (node.type === "Page") {
-      children.filter((child: NodeType) => {
-        if (child.type === "Header") return;
-        if (child.type === "Footer") return;
-        newChildren = [...newChildren, child.id];
-      });
-    } else {
-      children.filter((child: NodeType) => {
-        newChildren = [...newChildren, child.id];
-      });
-    }
+    const { children } = node;
+    let newChildren: NodeType[] =
+      node.type === "Page"
+        ? children.filter(
+            (child: NodeType) =>
+              child.type === "Header" || child.type === "Footer"
+          )
+        : children;
     if (!newChildren || current === newChildren.length) {
       return <RenderNode node={node} current={current} />;
     }

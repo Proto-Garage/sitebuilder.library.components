@@ -22,6 +22,9 @@ interface IProps {
   boxed?: boolean;
 }
 
+const Boxed: React.SFC<{ boxed?: boolean }> = props =>
+  props.boxed ? <Container>{props.children}</Container> : <>{props.children}</>;
+
 export default class NavigationBar extends React.Component<IProps> {
   state = {
     isOpen: false
@@ -35,7 +38,6 @@ export default class NavigationBar extends React.Component<IProps> {
     });
   };
   render() {
-    const Boxed: any = this.props.boxed ? Container : "div";
     return (
       <Wrapper
         style={this.props.styles ? this.props.styles : {}}
@@ -45,7 +47,7 @@ export default class NavigationBar extends React.Component<IProps> {
         }
         className="d-flex align-items-center"
       >
-        <Boxed>
+        <Boxed boxed={this.props.boxed}>
           <Navbar light expand="md">
             {/* <NavbarBrand href="/">reactstrap</NavbarBrand> */}
             <NavbarToggler onClick={this.toggle} />

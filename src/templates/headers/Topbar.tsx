@@ -9,15 +9,17 @@ interface IProps {
   boxed?: boolean;
 }
 
+const Boxed: React.SFC<{ boxed?: boolean }> = props =>
+  props.boxed ? <Container>{props.children}</Container> : <>{props.children}</>;
+
 const Topbar: React.SFC<IProps> = props => {
-  const Boxed: any = props.boxed ? Container : React.Fragment;
   return (
     <Wrapper
       className="d-none d-md-block"
       style={props.styles ? props.styles : {}}
       linkColor={props.styles ? props.styles.color : null}
     >
-      <Boxed>
+      <Boxed boxed={props.boxed}>
         <div className="d-flex flex-fill">
           <Navbar light expand="md" className="flex-grow-1 p-0">
             <Nav navbar className="d-flex flex-fill justify-content-between">

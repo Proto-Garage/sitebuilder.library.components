@@ -4,7 +4,7 @@ interface IProps {
     node: NodeType;
     current: number;
 }
-declare class RecurseNode extends React.Component<IProps> {
+export default class RecurseNode extends React.Component<IProps> {
     render(): JSX.Element;
 }
-export default RecurseNode;
+export {};
