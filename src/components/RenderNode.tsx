@@ -7,14 +7,20 @@ import Carousel from "./templates/Carousel";
 import ColumnControls from "./ColumnControls";
 import SectionControls from "./SectionControls";
 
-interface IProps {
-  current: number;
+interface OwnProps {
+  current?: number;
   dragControl?: any;
-  node: NodeType;
+  node: NodeType | null;
 }
 
-const RenderNode: React.SFC<IProps> = props => {
+const defaultProps: OwnProps = {
+  current: 0,
+  node: null
+};
+
+const RenderNode: React.SFC<OwnProps> = props => {
   const { current, dragControl, node } = props;
+  // if (!node)
   switch (node.type) {
     case "Root":
       return (
@@ -48,6 +54,8 @@ const RenderNode: React.SFC<IProps> = props => {
       return null;
   }
 };
+
+RenderNode.defaultProps = defaultProps;
 
 export default RenderNode;
 
