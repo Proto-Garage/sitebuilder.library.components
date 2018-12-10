@@ -80,7 +80,11 @@ export default class RecurseNode extends React.Component<IProps> {
           if (!node) return;
           if (node.type === "Section" && node.attributes.type === "row") {
             return (
-              <EditModeRowWrapper value={node.id} edit={window.__EDIT_MODE__}>
+              <EditModeRowWrapper
+                key={index}
+                value={node.id}
+                edit={window.__EDIT_MODE__}
+              >
                 <RenderNode node={node} current={current} />
               </EditModeRowWrapper>
             );
@@ -88,6 +92,7 @@ export default class RecurseNode extends React.Component<IProps> {
           if (node.type === "Section" && node.attributes.type === "column") {
             return (
               <EditModeColumnWrapper
+                key={index}
                 value={node.id}
                 index={index}
                 edit={window.__EDIT_MODE__}

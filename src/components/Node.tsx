@@ -16,14 +16,7 @@ export default class Node extends React.Component<OwnProps, any> {
     const { node, current } = this.props;
     if (!node) return;
     const { children } = node;
-    let newChildren: NodeType[] =
-      node.type === "Page"
-        ? children.filter(
-            (child: NodeType) =>
-              child.type === "Header" || child.type === "Footer"
-          )
-        : children;
-    if (!newChildren || current === newChildren.length) {
+    if (!children || current === children.length) {
       return <RenderNode node={node} current={current} />;
     }
     return <RecurseNode node={node} current={0} />;

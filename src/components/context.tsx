@@ -2,7 +2,7 @@ import * as React from "react";
 import { Config } from "sitebuilder.client";
 
 export interface ProviderState {
-  config: Config | null;
+  defaultConfig: Config | null;
 }
 
 export interface UpdateStateArg {
