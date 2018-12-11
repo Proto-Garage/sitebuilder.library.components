@@ -22,7 +22,7 @@ const config: any = {
     id: "footer",
     type: "Footer",
     attributes: {
-      template: 2,
+      template: 3,
       styles: {},
       navStyles: {},
       topStyles: {}
