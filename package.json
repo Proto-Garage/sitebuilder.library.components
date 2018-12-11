@@ -1,6 +1,6 @@
 {
   "name": "sitebuilder.library.components",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "main": "./lib/components/index.js",
   "types": "./lib/components/index.d.ts",
