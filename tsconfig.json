@@ -7,25 +7,17 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "declaration": true,
+    "declaration": false,
     "sourceMap": true,
     "jsx": "preserve",
-    "typeRoots": [
-      "node_modules/@types",
-      "typings"
-    ],
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "typeRoots": ["node_modules/@types", "typings"],
+    "lib": ["dom", "esnext"],
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "allowJs": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "isolatedModules": false
   },
   "exclude": [
     "node_modules",
@@ -34,9 +26,5 @@
     "./src/index.tsx",
     "./src/App.tsx"
   ],
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "typings/index.d.ts"
-  ]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "typings/index.d.ts"]
 }
