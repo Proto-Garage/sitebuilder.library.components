@@ -35,7 +35,6 @@ export default class extends React.Component<OwnProps, OwnState> {
       attributes: { path: "/" }
     });
     if (!page) return;
-    console.log(defaultConfig.serialize());
     return (
       <SitebuilderContext.Provider value={store}>
         <HeaderPanel header={defaultConfig.header} />
