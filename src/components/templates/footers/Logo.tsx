@@ -1,5 +1,5 @@
 import * as React from "react";
-import Image from "../assets/images/logo1.png";
+import Image from "../assets/logo1.png";
 
 interface IProps {}
 

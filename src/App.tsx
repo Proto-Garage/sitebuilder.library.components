@@ -2,7 +2,10 @@ import * as React from "react";
 import { Config } from "sitebuilder.client";
 import SitebuilderContext, { ProviderStore } from "./components/context";
 import Node from "./components/Node";
+import HeaderPanel from "./components/templates/headers/HeaderPanel";
+import FooterPanel from "./components/templates/footers/FooterPanel";
 import defaults from "./config";
+// import config from "./config";
 
 interface OwnProps {
   config?: Config;
@@ -32,9 +35,12 @@ export default class extends React.Component<OwnProps, OwnState> {
       attributes: { path: "/" }
     });
     if (!page) return;
+    console.log(defaultConfig.serialize());
     return (
       <SitebuilderContext.Provider value={store}>
+        <HeaderPanel header={defaultConfig.header} />
         <Node node={page} />
+        <FooterPanel footer={defaultConfig.footer} />
       </SitebuilderContext.Provider>
     );
   }

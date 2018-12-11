@@ -4,10 +4,34 @@ const config: any = {
     type: "Root",
     attributes: {},
     parent: null,
-    children: ["4256c964-6ea1-4fa2-9277-5b96ea5909da"]
+    children: ["9987f922-b31b-421f-981b-8784bf4f2342"]
   },
-  "4256c964-6ea1-4fa2-9277-5b96ea5909da": {
-    id: "4256c964-6ea1-4fa2-9277-5b96ea5909da",
+  header: {
+    id: "header",
+    type: "Header",
+    attributes: {
+      template: 2,
+      styles: {},
+      navStyles: {},
+      topStyles: {}
+    },
+    parent: null,
+    children: []
+  },
+  footer: {
+    id: "footer",
+    type: "Footer",
+    attributes: {
+      template: 2,
+      styles: {},
+      navStyles: {},
+      topStyles: {}
+    },
+    parent: null,
+    children: []
+  },
+  "9987f922-b31b-421f-981b-8784bf4f2342": {
+    id: "9987f922-b31b-421f-981b-8784bf4f2342",
     type: "Page",
     attributes: {
       path: "/",
@@ -15,19 +39,19 @@ const config: any = {
       title: "Default Page"
     },
     parent: "root",
-    children: ["9b9348d5-0231-4ee3-b27e-2e6326a9f0fb"]
+    children: ["6a9c0034-f373-4c30-86ab-cdcf6a3504ac"]
   },
-  "9b9348d5-0231-4ee3-b27e-2e6326a9f0fb": {
-    id: "9b9348d5-0231-4ee3-b27e-2e6326a9f0fb",
+  "6a9c0034-f373-4c30-86ab-cdcf6a3504ac": {
+    id: "6a9c0034-f373-4c30-86ab-cdcf6a3504ac",
     type: "Section",
     attributes: {
       type: "row"
     },
-    parent: "4256c964-6ea1-4fa2-9277-5b96ea5909da",
-    children: ["3e25f2f6-1e4c-444c-8536-c45855962b63"]
+    parent: "9987f922-b31b-421f-981b-8784bf4f2342",
+    children: ["ef0ae96d-f023-4c39-8f81-608cd203beef"]
   },
-  "3e25f2f6-1e4c-444c-8536-c45855962b63": {
-    id: "3e25f2f6-1e4c-444c-8536-c45855962b63",
+  "ef0ae96d-f023-4c39-8f81-608cd203beef": {
+    id: "ef0ae96d-f023-4c39-8f81-608cd203beef",
     type: "Carousel",
     attributes: {
       items: [
@@ -65,7 +89,7 @@ const config: any = {
         autoplay: false
       }
     },
-    parent: "9b9348d5-0231-4ee3-b27e-2e6326a9f0fb",
+    parent: "6a9c0034-f373-4c30-86ab-cdcf6a3504ac",
     children: []
   }
 };
