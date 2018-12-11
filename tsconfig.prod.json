@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib",
+    "target": "es6",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types", "types"],
+    "lib": ["dom", "esnext"]
+  },
+  "exclude": [
+    "node_modules",
+    "./src/react-app-env.d.ts",
+    "./src/serviceWorker.ts",
+    "./src/index.tsx",
+    "./src/App.tsx"
+  ],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "typings/index.d.ts"]
+}

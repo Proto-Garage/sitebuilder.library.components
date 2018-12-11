@@ -1,23 +1,21 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
-    "target": "es6",
-    "module": "esnext",
-    "skipLibCheck": false,
-    "esModuleInterop": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "declaration": true,
-    "sourceMap": true,
-    "jsx": "preserve",
-    "typeRoots": ["node_modules/@types", "typings"],
+    "preserveConstEnums": true,
+    "target": "es5",
+    "allowJs": true,
+    "skipLibCheck": true,
     "lib": ["dom", "esnext"],
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": false
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strictNullChecks": true
   },
   "exclude": [
     "node_modules",

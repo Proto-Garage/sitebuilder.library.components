@@ -6,7 +6,7 @@
   "types": "./lib/components/index.d.ts",
   "scripts": {
     "start": "react-scripts start",
-    "build-lib": "rimraf ./lib && tsc",
+    "build-lib": "rimraf ./lib && tsc --project tsconfig.prod.json",
     "prepare": "npm run build-lib"
   },
   "repository": {
