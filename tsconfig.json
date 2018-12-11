@@ -1,31 +1,22 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
     "target": "es6",
-    "module": "esnext",
+    "module": "commonjs",
     "skipLibCheck": false,
     "esModuleInterop": true,
-    "jsx": "preserve",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./lib",
-    "typeRoots": [
-      "node_modules/@types",
-      "typings"
-    ],
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "allowJs": true,
+    "jsx": "react",
+    "typeRoots": ["node_modules/@types", "typings"],
+    "lib": ["dom", "esnext"],
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
@@ -34,9 +25,5 @@
     "./src/index.tsx",
     "./src/App.tsx"
   ],
-  "include": [
-    "./src/**/*.tsx",
-    "./src/**/*.ts",
-    "typings/index.d.ts"
-  ]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "typings/index.d.ts"]
 }
