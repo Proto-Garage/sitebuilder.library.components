@@ -8,7 +8,7 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react",
-    "typeRoots": ["node_modules/@types", "types"],
+    "typeRoots": ["node_modules/@types", "typings"],
     "lib": ["dom", "esnext"]
   },
   "exclude": [
