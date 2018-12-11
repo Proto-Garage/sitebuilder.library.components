@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "declaration": false,
+    "declaration": true,
     "sourceMap": true,
     "jsx": "preserve",
     "typeRoots": ["node_modules/@types", "typings"],
