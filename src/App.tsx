@@ -31,7 +31,6 @@ export default class extends React.Component<OwnProps, OwnState> {
       type: "Page",
       attributes: { path: "/" }
     });
-    console.log(defaultConfig.root.findChild({ type: "Header" }));
     if (!page) return;
     return (
       <SitebuilderContext.Provider value={store}>
