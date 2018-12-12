@@ -1,7 +1,4 @@
 import * as React from "react";
-// const Image1 = require("./translate1.png");
-// const Image2 = require("./translate2.png");
-// const Image3 = require("./translate3.png");
 
 interface IProps {}
 

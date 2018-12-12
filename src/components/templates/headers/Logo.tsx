@@ -1,5 +1,4 @@
 import * as React from "react";
-const Image = require("../assets/logo1.png");
 
 interface IProps {}
 

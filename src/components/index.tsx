@@ -4,6 +4,6 @@ import RenderNode from "./RenderNode";
 import HeaderPanel from "./templates/headers/HeaderPanel";
 import FooterPanel from "./templates/footers/FooterPanel";
 
-export { RecurseNode, RenderNode, HeaderPanel, FooterPanel };
+export { Node, RecurseNode, RenderNode, HeaderPanel, FooterPanel };
 
 export default Node;
