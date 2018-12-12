@@ -1,56 +1,37 @@
 import * as React from "react";
-import { CarouselNode, Node } from "sitebuilder.client";
+import { CarouselNode, CarouselItemNodeAttributes } from "sitebuilder.client";
 import OwlCarousel from "react-owl-carousel2";
 
-interface IProps {
-  node: CarouselNode;
+interface OwnProps {
+  node: CarouselNode | null;
   boxed: false;
 }
 
-export default class Carousel extends React.Component<IProps, any> {
+export default class Carousel extends React.Component<OwnProps, any> {
   static defaultProps = {
     boxed: false
   };
   public render() {
+    const { node } = this.props;
+    if (!node || !node.attributes) return;
+    const slides = node.attributes.items.map(
+      (item: CarouselItemNodeAttributes, idx: number) => (
+        <img key={idx} src={item.src} alt={item.altText} />
+      )
+    );
     return (
       <OwlCarousel
-        ref="car"
+        ref={node.id}
         options={{
           items: 1,
           nav: false,
           dots: true,
           rewind: true,
-          autoplay: true
+          autoplay: true,
+          ...node.attributes.options
         }}
       >
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410726/banner_1.png"
-          alt="The Last of us"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410726/lottery_banner.png"
-          alt="GTA V"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410729/live_banner.png"
-          alt="Mirror Edge"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410726/banner_1.png"
-          alt="The Last of us"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410726/lottery_banner.png"
-          alt="GTA V"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410729/live_banner.png"
-          alt="Mirror Edge"
-        />
-        <img
-          src="https://res.cloudinary.com/dmhahyfum/image/upload/v1543410730/sport_banner.png"
-          alt="Mirror Edge"
-        />
+        {slides}
       </OwlCarousel>
     );
   }

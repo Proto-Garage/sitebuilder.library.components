@@ -82,7 +82,7 @@ const config: any = {
         }
       ],
       options: {
-        items: 4,
+        items: 1,
         loop: true,
         nav: false,
         rewind: false,
