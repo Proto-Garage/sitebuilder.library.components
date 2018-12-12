@@ -8,7 +8,6 @@
     "declaration": true,
     "sourceMap": true,
     "jsx": "react",
-    "typeRoots": ["node_modules/@types", "typings"],
     "lib": ["dom", "esnext"]
   },
   "exclude": [
@@ -18,5 +17,5 @@
     "./src/index.tsx",
     "./src/App.tsx"
   ],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "typings/index.d.ts"]
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "./typings/**/*.d.ts"]
 }
