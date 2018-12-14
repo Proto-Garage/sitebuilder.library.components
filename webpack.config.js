@@ -1,14 +1,33 @@
 const path = require("path");
+const ROOT = path.resolve(__dirname, "src");
 
 module.exports = {
-  entry: "./src/components/index.ts",
-  devtool: "source-map",
+  context: ROOT,
+  entry: {
+    main: "./components/index.tsx"
+  },
+  devtool: "cheap-module-source-map",
+  devServer: {},
   module: {
     rules: [
+      /****************
+       * PRE-LOADERS
+       *****************/
       {
-        test: /\.tsx?$/,
-        use: ["babel-loader", "ts-loader"],
-        exclude: /node_modules/
+        enforce: "pre",
+        test: /\.js$/,
+        use: "source-map-loader"
+      },
+      {
+        enforce: "pre",
+        test: /\.tsx$/,
+        exclude: /node_modules/,
+        use: ["babel-loader", "tslint-loader"]
+      },
+      {
+        test: /\.tsx$/,
+        exclude: [/node_modules/],
+        use: ["babel-loader", "awesome-typescript-loader"]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -26,7 +45,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "lib"),
-    filename: "[name].js",
+    filename: "[name].bundle.js",
     libraryTarget: "umd",
     library: "sitebuilder.library.components",
     umdNamedDefine: true

@@ -15,7 +15,7 @@ import {
 import styled from "styled-components";
 import { Styles } from "sitebuilder.client";
 
-import "../../../scss/navigation.scss";
+import "./navigation.scss";
 
 interface IProps {
   styles?: Styles | null;
