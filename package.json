@@ -11,7 +11,7 @@
     "build-prod": "webpack --config webpack.config.js --mode production",
     "build": "tsc --project tsconfig.prod.json && npm run copyfiles",
     "copyfiles": "copyfiles --up 1 ./src/**/**/*.html ./src/**/**/*.jpg ./src/**/**/*.png ./src/**/**/*.svg ./src/**/**/*.scss lib/",
-    "prepare": "npm run build-lib"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
